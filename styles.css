@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+p {
+    color:white;
+}
+.key {
+    font-size: 50px;
+    color: yellow;
+    font-family: Arial, sans-serif;
+    margin-top: 20px;
+}
+
+.title {
+    position: absolute;
+    top: 15%; /* Moved slightly higher */
+    font-size: 80px; /* Slightly smaller for balance */
+    font-family: 'Arial Black', Arial, sans-serif; /* Bolder font */
+    background: linear-gradient(45deg, yellow, gray, yellow); /* Gradient effect */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* Makes gradient visible through text */
+    animation: bounce 2s infinite ease-in-out; /* Bounce animation */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Subtle glow */
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px); /* Bounces up slightly */
+    }
+}
+
+.copy-button {
+    margin-top: 30px;
+    padding: 12px 30px;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    color: white;
+    background-color: #1a1a1a;
+    border: 2px solid yellow;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.copy-button:hover {
+    background-color: yellow;
+    color: black;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 255, 0, 0.7);
+}
+
+.copy-button:active {
+    transform: scale(0.95);
+}
+
+.copy-button::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+}
+
+@keyframes ripple {
+    to {
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 0;
+    }
+}
+
+.copy-button:not(:active)::after {
+    animation: none;
+}

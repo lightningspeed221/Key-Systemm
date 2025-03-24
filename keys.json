@@ -1,0 +1,12 @@
+{
+    "SAMPLEKEY1": {
+        "key_code": "SAMPLEKEY1",
+        "is_used": false,
+        "created_at": 1711353600000
+    },
+    "SAMPLEKEY2": {
+        "key_code": "SAMPLEKEY2",
+        "is_used": true,
+        "created_at": 1711353600000
+    }
+}
